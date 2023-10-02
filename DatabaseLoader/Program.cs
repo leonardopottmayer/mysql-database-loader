@@ -16,11 +16,11 @@
             FileSeparator fileSeparator = new FileSeparator(modulesFolder);
             DbCreator dbCreator = new DbCreator(connectionString);
 
-            var tableFiles = fileSeparator.GetTables();
-            var constraintFiles = fileSeparator.GetConstraints();
+            DbFiles files = fileSeparator.GetFiles();
 
-            dbCreator.CreateTables(tableFiles);
-            dbCreator.CreateConstraints(constraintFiles);
+            dbCreator.ExecuteFiles(files.TableFiles);
+            dbCreator.ExecuteFiles(files.ConstraintFiles);
+            dbCreator.ExecuteFiles(files.SeedFiles);
 
             Console.WriteLine("All the SQL scripts were executed.");
         }
