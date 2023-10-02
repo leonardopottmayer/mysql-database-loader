@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "S:\\API\\DatabaseLoader\\DatabaseLoader\\DatabaseLoader.csproj": {}
+    "C:\\Users\\pottm\\Documents\\Leonardo\\Dev\\api\\mysql-database-loader\\DatabaseLoader\\DatabaseLoader.csproj": {}
   },
   "projects": {
-    "S:\\API\\DatabaseLoader\\DatabaseLoader\\DatabaseLoader.csproj": {
+    "C:\\Users\\pottm\\Documents\\Leonardo\\Dev\\api\\mysql-database-loader\\DatabaseLoader\\DatabaseLoader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "S:\\API\\DatabaseLoader\\DatabaseLoader\\DatabaseLoader.csproj",
+        "projectUniqueName": "C:\\Users\\pottm\\Documents\\Leonardo\\Dev\\api\\mysql-database-loader\\DatabaseLoader\\DatabaseLoader.csproj",
         "projectName": "DatabaseLoader",
-        "projectPath": "S:\\API\\DatabaseLoader\\DatabaseLoader\\DatabaseLoader.csproj",
-        "packagesPath": "C:\\Users\\Leonardo Pottmayer\\.nuget\\packages\\",
-        "outputPath": "S:\\API\\DatabaseLoader\\DatabaseLoader\\obj\\",
+        "projectPath": "C:\\Users\\pottm\\Documents\\Leonardo\\Dev\\api\\mysql-database-loader\\DatabaseLoader\\DatabaseLoader.csproj",
+        "packagesPath": "C:\\Users\\pottm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pottm\\Documents\\Leonardo\\Dev\\api\\mysql-database-loader\\DatabaseLoader\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Leonardo Pottmayer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pottm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

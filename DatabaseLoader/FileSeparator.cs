@@ -9,12 +9,14 @@
             _folderPath = folderPath;
         }
 
-        public IEnumerable<string> GetTables()
+        public DbFiles GetFiles()
         {
+            List<string> tableFiles = new List<string>();
+            List<string> constraintFiles = new List<string>();
+            List<string> seedFiles = new List<string>();
+
             DirectoryInfo modulesDirectory = new DirectoryInfo(_folderPath);
             DirectoryInfo[] subdirectories = modulesDirectory.GetDirectories();
-
-            List<string> tableFiles = new List<string>();
 
             foreach (DirectoryInfo subdirectory in subdirectories)
             {
@@ -24,31 +26,16 @@
                 {
                     if (sqlFile.Contains("_tables.sql"))
                         tableFiles.Add(sqlFile);
-                }
-            }
-
-            return tableFiles;
-        }
-
-        public IEnumerable<string> GetConstraints()
-        {
-            DirectoryInfo modulesDirectory = new DirectoryInfo(_folderPath);
-            DirectoryInfo[] subdirectories = modulesDirectory.GetDirectories();
-
-            List<string> constraintFiles = new List<string>();
-
-            foreach (DirectoryInfo subdirectory in subdirectories)
-            {
-                string[] sqlFiles = Directory.GetFiles(subdirectory.FullName, "*.sql");
-
-                foreach (string sqlFile in sqlFiles)
-                {
-                    if (sqlFile.Contains("_constraints.sql"))
+                    else if (sqlFile.Contains("_constraints.sql"))
                         constraintFiles.Add(sqlFile);
+                    else if (sqlFile.Contains("_seed.sql"))
+                        seedFiles.Add(sqlFile);
                 }
             }
 
-            return constraintFiles;
+            var files = new DbFiles(tableFiles, constraintFiles, seedFiles);
+
+            return files;
         }
     }
 }
