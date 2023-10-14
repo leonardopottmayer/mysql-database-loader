@@ -27,16 +27,20 @@ namespace DatabaseLoader
                         cmd.CommandText = sqlScript;
                         cmd.ExecuteNonQuery();
 
-                        Console.WriteLine($"Executado o script: {Path.GetFileName(sqlFile)}");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"Executed {Path.GetFileName(sqlFile)}");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Erro ao executar o script {Path.GetFileName(sqlFile)}: {ex.Message}");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Error while executing script {Path.GetFileName(sqlFile)} \n Error: {ex.Message}");
                     }
                 }
 
                 connection.Close();
             }
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
