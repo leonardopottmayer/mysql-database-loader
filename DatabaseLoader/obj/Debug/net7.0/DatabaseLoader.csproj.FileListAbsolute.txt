@@ -44,3 +44,11 @@ S:\API\mysql-database-loader\DatabaseLoader\obj\Debug\net7.0\refint\DatabaseLoad
 S:\API\mysql-database-loader\DatabaseLoader\obj\Debug\net7.0\DatabaseLoader.pdb
 S:\API\mysql-database-loader\DatabaseLoader\obj\Debug\net7.0\DatabaseLoader.genruntimeconfig.cache
 S:\API\mysql-database-loader\DatabaseLoader\obj\Debug\net7.0\ref\DatabaseLoader.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Json.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
+S:\API\mysql-database-loader\DatabaseLoader\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll

@@ -14,6 +14,8 @@
             List<string> tableFiles = new List<string>();
             List<string> constraintFiles = new List<string>();
             List<string> seedFiles = new List<string>();
+            List<string> truncateFiles = new List<string>();
+            List<string> dropFiles = new List<string>();
 
             DirectoryInfo modulesDirectory = new DirectoryInfo(_folderPath);
             DirectoryInfo[] subdirectories = modulesDirectory.GetDirectories();
@@ -30,10 +32,14 @@
                         constraintFiles.Add(sqlFile);
                     else if (sqlFile.Contains("_seed.sql"))
                         seedFiles.Add(sqlFile);
+                    else if (sqlFile.Contains("_truncates.sql"))
+                        truncateFiles.Add(sqlFile);
+                    else if (sqlFile.Contains("_drops.sql"))
+                        dropFiles.Add(sqlFile);
                 }
             }
 
-            var files = new DbFiles(tableFiles, constraintFiles, seedFiles);
+            var files = new DbFiles(tableFiles, constraintFiles, seedFiles, truncateFiles, dropFiles);
 
             return files;
         }

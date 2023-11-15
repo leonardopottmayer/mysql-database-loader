@@ -5,18 +5,18 @@
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            //string connectionString = "Server=localhost;Port=3306;Database=gowther;User=root;Password=admin;";
-            //string mainProjectFolder = "S:\\API\\gowther-api\\database\\objects\\modules";
+            string connectionString = "Server=localhost;Port=3306;Database=gowther;User=root;Password=admin;";
+            string modulesFolder = "S:\\API\\gowther-api\\database\\objects\\modules";
 
             string[] operationsList = Menu.AskForOperation();
 
-            Console.WriteLine("Type the MySQL connection string");
-            string connectionString = Console.ReadLine();
+            //Console.WriteLine("Type the MySQL connection string");
+            //string connectionString = Console.ReadLine();
 
             Console.Clear();
 
-            Console.WriteLine("Type the project modules folder path");
-            string modulesFolder = Console.ReadLine();
+            //Console.WriteLine("Type the project modules folder path");
+            //string modulesFolder = Console.ReadLine();
 
             Console.Clear();
 
@@ -42,6 +42,18 @@
             if(operationsList.Contains ("3"))
             {
                 dbCreator.ExecuteFiles(files.ConstraintFiles);
+                Console.WriteLine();
+            }
+
+            if (operationsList.Contains("4"))
+            {
+                dbCreator.ExecuteFiles(files.TruncateFiles, true);
+                Console.WriteLine();
+            }
+
+            if (operationsList.Contains("5"))
+            {
+                dbCreator.ExecuteFiles(files.DropFiles);
                 Console.WriteLine();
             }
 

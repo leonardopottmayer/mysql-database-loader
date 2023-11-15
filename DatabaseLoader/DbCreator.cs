@@ -11,17 +11,22 @@ namespace DatabaseLoader
             _connectionString = connectionString;
         }
 
-        public void ExecuteFiles(IEnumerable<string> sqlFiles)
+        public void ExecuteFiles(IEnumerable<string> sqlFiles, bool disableKeyChecks = false)
         {
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
+
+                if (disableKeyChecks)
+                    DisableMySQLKeyChecks(connection);
 
                 foreach (string sqlFile in sqlFiles)
                 {
                     try
                     {
                         string sqlScript = File.ReadAllText(sqlFile);
+                        if (string.IsNullOrEmpty(sqlScript.Trim()))
+                            continue;
 
                         var cmd = connection.CreateCommand();
                         cmd.CommandText = sqlScript;
@@ -41,6 +46,15 @@ namespace DatabaseLoader
             }
 
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        private void DisableMySQLKeyChecks(MySqlConnection connection)
+        {
+            var cmd = connection.CreateCommand();
+
+            cmd.CommandText = "SET foreign_key_checks = 0";
+
+            cmd.ExecuteNonQuery();
         }
     }
 }

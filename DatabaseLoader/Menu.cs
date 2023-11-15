@@ -8,6 +8,8 @@
             { "1", "Create tables (something_tables.sql)" },
             { "2", "Seed data (something_seed.sql)" },
             { "3", "Create constraints (something_constraints.sql)" },
+            { "4", "Truncate tables (something_truncates.sql)" },
+            { "5", "Drop tables (something_drops.sql)" },
         };
         #endregion
 
